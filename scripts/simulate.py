@@ -87,9 +87,10 @@ def save_components_to_csv(components, threshold, component_type, run_number):
 
 logger.info("Setting up simulation parameters...")
 # Key thresholds to analyze in detail
-key_thresholds = [0.2, 0.3, 0.4, 0.5, 0.6]
+key_thresholds = [0.4]
 # Full range for plots
-plot_thresholds = np.linspace(0, 1, 21)
+# plot_thresholds = np.linspace(0, 1, 21)
+plot_thresholds = [0.4]
 results = []
 component_data = []
 
@@ -133,7 +134,7 @@ for i, p in enumerate(plot_thresholds):
 # Save component data to CSV
 logger.info("Saving component data to CSV...")
 df_components = pd.DataFrame(component_data)
-output_path = os.path.join(root_dir, "data", "component_analysis.csv")
+output_path = os.path.join(root_dir, "data", "component_analysis0pt4.csv")
 df_components.to_csv(output_path, index=False)
 logger.info(f"Saved component data to {output_path}")
 
